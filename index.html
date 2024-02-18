@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+  <body>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="./assets/resets.css" />
+      <link rel="stylesheet" href="./assets/style.css" />
+      <title>Tic Tac Toe</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/resets.css">
-    <link rel="stylesheet" href="./assets/style.css">
-    <title>Tic Tac Toe</title>
-</head>
-
-<body>
     <h1 id="header1">Tic Tac Toe</h1>
 
-
     <div id="container">
-
-
-        <div class="con-item1">
-            <div id="tup">
-
-                <h2>Rules</h2>
-                <p>You know the rules! This is TIC! TAC! TOE! Where three in a row will get you VICTORY! Are YOU up for
-                    the CHALLANGE! Press the START button to begin!</p>
-                    <form id="start-form">
-                        <button id="start-btn" type="submit">START</button>
-                    </form>
-            </div>
-            <div id="map-board"></div>
+      <div class="con-item1">
+        <div id="tup">
+          <h2>Rules</h2>
+          <p>
+            You know the rules! This is TIC! TAC! TOE! Where three in a row will
+            get you VICTORY! Are YOU up for the CHALLANGE! Press the START
+            button to begin!
+          </p>
+          <form id="start-form">
+            <button id="start-btn" type="submit">START</button>
+          </form>
         </div>
+        <div id="map-board">
+          <div id="container-box">
+            <div class="box" id="item1"></div>
+            <div class="box" id="item2"></div>
+            <div class="box" id="item3"></div>
+            <div class="box" id="item4"></div>
+            <div class="box" id="item5"></div>
+            <div class="box" id="item6"></div>
+            <div class="box" id="item7"></div>
+            <div class="box" id="item8"></div>
+            <div class="box" id="item9"></div>
+          </div>
+        </div>
+      </div>
     </div>
-
 
     <footer id="footer"></footer>
     <script src="./assets/javascript.js"></script>
-</body>
-
+  </body>
 </html>
