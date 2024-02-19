@@ -129,3 +129,7 @@ h2 {
   width: 125px;
   height: 40px;
 }
+
+.box:hover {
+  opacity: .7;
+}
