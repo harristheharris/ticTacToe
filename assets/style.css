@@ -1,6 +1,7 @@
 :root {
   --box-size: 7rem;
-  --box-background-color: aquamarine;
+  --box-background-color1: #003566;
+  --box-background-color2: #001D3D;
 }
 
 body {
@@ -41,7 +42,6 @@ h2 {
   visibility: hidden;
   height: var(--box-size);
   width: var(--box-size);
-  background-color: aquamarine;
   border: 2px solid black;
   display: flex;
   justify-content: center;
@@ -53,46 +53,55 @@ h2 {
 #item1 {
   grid-column: 1;
   grid-row: 1;
+  background-color: var(--box-background-color1)
 }
 
 #item2 {
   grid-column: 2;
   grid-row: 1;
+  background-color: var(--box-background-color2);
 }
 
 #item3 {
   grid-column: 3;
   grid-row: 1;
+  background-color: var(--box-background-color1)
 }
 
 #item4 {
   grid-column: 1;
   grid-row: 2;
+  background-color: var(--box-background-color2);
 }
 
 #item5 {
   grid-column: 2;
   grid-row: 2;
+  background-color: var(--box-background-color1)
 }
 
 #item6 {
   grid-column: 3;
   grid-row: 2;
+  background-color: var(--box-background-color2);
 }
 
 #item7 {
   grid-column: 1;
   grid-row: 3;
+  background-color: var(--box-background-color1)
 }
 
 #item8 {
   grid-column: 2;
   grid-row: 3;
+  background-color: var(--box-background-color2);
 }
 
 #item9 {
   grid-column: 3;
   grid-row: 3;
+  background-color: var(--box-background-color1)
 }
 
 #tup {
