@@ -1,5 +1,5 @@
 :root {
-  --box-size: 7rem;
+  --box-min-size: 50px;
   --box-background-color1: #003566;
   --box-background-color2: #001D3D;
 }
@@ -22,14 +22,11 @@ h2 {
 }
 
 #container-box {
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 50%;
+  margin: 0 auto;
   display: grid;
-  justify-content: center;
-  justify-items: center;
-  align-content: center;
-  justify-content: center;
-  grid-template-columns: repeat(3, auto);
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
 
 #header1 {
@@ -38,10 +35,16 @@ h2 {
   margin: 1em;
 }
 
+#map-board {
+  height: 75%;
+  width: 75%;
+  margin: auto;
+}
+
 .box {
   visibility: hidden;
-  height: var(--box-size);
-  width: var(--box-size);
+  min-height: var(--box-min-size);
+  min-width: var(--box-min-size);
   border: 2px solid black;
   display: flex;
   justify-content: center;
@@ -128,4 +131,8 @@ h2 {
   margin-top: 20px;
   width: 125px;
   height: 40px;
+}
+
+.box:hover {
+  opacity: .7;
 }
