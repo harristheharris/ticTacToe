@@ -14,6 +14,25 @@ h2 {
   margin-bottom: 0.75em;
 }
 
+#turn-tup{
+  visibility: visible ; /*to be hidden*/
+  position: absolute;
+  left: 100px;
+}
+
+.turns{
+  font-size: 1.75em;
+  margin-bottom: .5em;
+}
+
+#player-one{
+visibility: visible;
+}
+
+#player-two{
+  visibility: visible;
+}
+
 #container {
   display: flex;
   align-items: center;

@@ -37,4 +37,21 @@ function startGame(event){
 
 function boxSelection(event){
     console.log('clicked!')
+
 };
+
+//as of now, we have a start button and a board that is displayed once the start button is pressed. 
+//what else do we need??
+//We choose to have turns alternate and therefore, the symbol place to alternate
+//with this in mind I want a turn indication to appear for whose turn it is
+
+//determining turn
+//when the start button is pressed player1 turn is set right away to play
+//when a square is selcted to place a symbol the turn is switched
+function turnToggle() {
+
+}
+
+
+
+
