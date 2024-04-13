@@ -25,31 +25,31 @@ bottomRight.addEventListener("click", boxSelection);
 var playerTurn = 0;
 
 function changeTurn(turn) {
-  if (turn == 0) {
-    turn = 1;
-  } else {
-    turn = 0;
-  }
-  return turn;
+    if (turn == 0) {
+        turn = 1;
+    } else {
+        turn = 0;
+    }
+    return turn;
 }
 
 function startGame(event) {
-  event.preventDefault();
-  const tup = document.getElementById("tup");
-  const box = document.querySelectorAll(".box");
+    event.preventDefault();
+    const tup = document.getElementById("tup");
+    const box = document.querySelectorAll(".box");
 
-  tup.innerHTML = "";
-  console.log("start game!");
+    tup.innerHTML = "";
+    console.log("start game!");
 
-  //arrow function being evoked right away
-  box.forEach((boxItems) => {
-    boxItems.setAttribute("style", "visibility: visible");
-    console.log(boxItems);
-  });
+    //arrow function being evoked right away
+    box.forEach((boxItems) => {
+        boxItems.setAttribute("style", "visibility: visible");
+        console.log(boxItems);
+    });
 }
 
 
-function boxSelection(event){
+function boxSelection(event) {
     turnToggle(playerTurn);
     console.log('clicked!');
 
@@ -64,15 +64,12 @@ function boxSelection(event){
 //when the start button is pressed player1 turn is set right away to play
 //when a square is selcted to place a symbol the turn is switched
 function turnToggle(turn) {
-    let toggleTurns = $(".turns");
-    console.log(toggleTurns);
-    toggleTurns.each(toggle());
 
-    if (turn === 0){
-        
+    if (turn === 0) {
+
         return playerTurn = 1;
     } else {
-        return playerTurn = 0; 
+        return playerTurn = 0;
     }
 }
 
