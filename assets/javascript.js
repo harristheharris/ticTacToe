@@ -52,19 +52,3 @@ function boxSelection(event) {
   playerTurn = changeTurn(playerTurn);
   console.log("Player Turn = ", playerTurn);
 }
-
-/*
-=========================================================================
-Hypothetical way to do it
-=========================================================================
-*/
-/*
-let playerTurn = 1;
-
-
-
-
-
-
-console.log("Player Turn = ", playerTurn);
-*/
