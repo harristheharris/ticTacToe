@@ -26,11 +26,12 @@ h2 {
 }
 
 #player-one{
+  
 visibility: visible;
 }
 
 #player-two{
-  visibility: visible;
+  visibility: hidden;
 }
 
 #container {

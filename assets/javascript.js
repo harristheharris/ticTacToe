@@ -8,6 +8,7 @@ const middleRight = document.getElementById("item6")
 const bottomLeft = document.getElementById("item7")
 const bottomMiddle = document.getElementById("item8")
 const bottomRight = document.getElementById("item9")
+var playerTurn = 0;
 
 strtBttn.addEventListener("click", startGame);
 topLeft.addEventListener("click", boxSelection);
@@ -36,7 +37,8 @@ function startGame(event){
 }
 
 function boxSelection(event){
-    console.log('clicked!')
+    turnToggle(playerTurn);
+    console.log('clicked!');
 
 };
 
@@ -48,12 +50,19 @@ function boxSelection(event){
 //determining turn
 //when the start button is pressed player1 turn is set right away to play
 //when a square is selcted to place a symbol the turn is switched
-function turnToggle() {
+function turnToggle(turn) {
+    let toggleTurns = $(".turns");
+    console.log(toggleTurns);
+    toggleTurns.each(toggle());
 
-    
-
+    if (turn === 0){
+        
+        return playerTurn = 1;
+    } else {
+        return playerTurn = 0; 
+    }
 }
 
-
+turnToggle(playerTurn)
 
 
