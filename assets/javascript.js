@@ -1,13 +1,13 @@
 const strtBttn = document.getElementById("start-btn");
-const topLeft = document.getElementById("item1")
-const topMiddle = document.getElementById("item2")
-const topRight = document.getElementById("item3")
-const middleLeft = document.getElementById("item4")
-const center = document.getElementById("item5")
-const middleRight = document.getElementById("item6")
-const bottomLeft = document.getElementById("item7")
-const bottomMiddle = document.getElementById("item8")
-const bottomRight = document.getElementById("item9")
+const topLeft = document.getElementById("item1");
+const topMiddle = document.getElementById("item2");
+const topRight = document.getElementById("item3");
+const middleLeft = document.getElementById("item4");
+const center = document.getElementById("item5");
+const middleRight = document.getElementById("item6");
+const bottomLeft = document.getElementById("item7");
+const bottomMiddle = document.getElementById("item8");
+const bottomRight = document.getElementById("item9");
 
 strtBttn.addEventListener("click", startGame);
 topLeft.addEventListener("click", boxSelection);
@@ -20,21 +20,51 @@ bottomLeft.addEventListener("click", boxSelection);
 bottomMiddle.addEventListener("click", boxSelection);
 bottomRight.addEventListener("click", boxSelection);
 
-function startGame(event){
-    event.preventDefault();
-    const tup = document.getElementById("tup");
-    const box = document.querySelectorAll(".box");
+var playerTurn = 0;
 
-    tup.innerHTML = "";
-    console.log("start game!");
-
-    //arrow function being evoked right away
-    box.forEach((boxItems) => {
-    boxItems.setAttribute("style", "visibility: visible");
-    console.log(boxItems);
-    });
+function changeTurn(turn) {
+  if (turn == 0) {
+    turn = 1;
+  } else {
+    turn = 0;
+  }
+  return turn;
 }
 
-function boxSelection(event){
-    console.log('clicked!')
-};
+function startGame(event) {
+  event.preventDefault();
+  const tup = document.getElementById("tup");
+  const box = document.querySelectorAll(".box");
+
+  tup.innerHTML = "";
+  console.log("start game!");
+
+  //arrow function being evoked right away
+  box.forEach((boxItems) => {
+    boxItems.setAttribute("style", "visibility: visible");
+    console.log(boxItems);
+  });
+}
+
+function boxSelection(event) {
+  console.log("clicked!");
+
+  playerTurn = changeTurn(playerTurn);
+  console.log("Player Turn = ", playerTurn);
+}
+
+/*
+=========================================================================
+Hypothetical way to do it
+=========================================================================
+*/
+/*
+let playerTurn = 1;
+
+
+
+
+
+
+console.log("Player Turn = ", playerTurn);
+*/
