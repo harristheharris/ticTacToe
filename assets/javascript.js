@@ -1,4 +1,5 @@
 const strtBttn = document.getElementById("start-btn");
+
 const topLeft = document.getElementById("item1");
 const topMiddle = document.getElementById("item2");
 const topRight = document.getElementById("item3");
@@ -8,6 +9,7 @@ const middleRight = document.getElementById("item6");
 const bottomLeft = document.getElementById("item7");
 const bottomMiddle = document.getElementById("item8");
 const bottomRight = document.getElementById("item9");
+
 
 strtBttn.addEventListener("click", startGame);
 topLeft.addEventListener("click", boxSelection);
@@ -46,9 +48,33 @@ function startGame(event) {
   });
 }
 
-function boxSelection(event) {
-  console.log("clicked!");
 
-  playerTurn = changeTurn(playerTurn);
-  console.log("Player Turn = ", playerTurn);
+function boxSelection(event){
+    turnToggle(playerTurn);
+    console.log('clicked!');
+
+};
+
+//as of now, we have a start button and a board that is displayed once the start button is pressed. 
+//what else do we need??
+//We choose to have turns alternate and therefore, the symbol place to alternate
+//with this in mind I want a turn indication to appear for whose turn it is
+
+//determining turn
+//when the start button is pressed player1 turn is set right away to play
+//when a square is selcted to place a symbol the turn is switched
+function turnToggle(turn) {
+    let toggleTurns = $(".turns");
+    console.log(toggleTurns);
+    toggleTurns.each(toggle());
+
+    if (turn === 0){
+        
+        return playerTurn = 1;
+    } else {
+        return playerTurn = 0; 
+    }
 }
+
+turnToggle(playerTurn)
+
