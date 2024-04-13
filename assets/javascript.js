@@ -50,6 +50,8 @@ function boxSelection(event){
 //when a square is selcted to place a symbol the turn is switched
 function turnToggle() {
 
+    
+
 }
 
 
