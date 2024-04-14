@@ -15,6 +15,15 @@ function verificationCenter(playerTurn, thisBtn) {
   checkWin(playerOneArray, playerTwoArray, playerTurn);
 }
 
+/**
+ * Checks to see if/when a player gets 3 in a row.
+ *
+ * @author Brandon Carter <brandon.d.carter99@gmail.com>
+ *
+ * @param {Array} playerOneArray  Array of chosen boxes for player one.
+ * @param {Array} playerTwoArray  Array of chosen boxes for player two.
+ * @param {Number} playerTurn     Either 0 or 1 depending on which turn it is.
+ */
 function checkWin(playerOneArray, playerTwoArray, playerTurn) {
   var winConditions = [
     ["1", "2", "3"],
