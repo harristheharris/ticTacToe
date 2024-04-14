@@ -22,6 +22,7 @@ bottomMiddle.addEventListener("click", boxSelection);
 bottomRight.addEventListener("click", boxSelection);
 
 var playerTurn = 0;
+
 console.log("Player 1")
 
 function changeTurn(turn) {
@@ -49,8 +50,10 @@ function startGame(event) {
 }
 
 function boxSelection(event) {
-    turnToggle(playerTurn);
-    console.log("clicked!");
+
+  turnToggle(playerTurn);
+  console.log("clicked!");
+
 }
 
 //as of now, we have a start button and a board that is displayed once the start button is pressed.
@@ -74,21 +77,19 @@ function turnToggle(turn) {
 
 turnToggle(playerTurn);
 $(".box").click(function () {
-    $("#player-one").css(
-        "visibility",
-        $("#player-one").css("visibility") == "hidden" ? "visible" : "hidden"
-    );
-    $("#player-two").css(
-        "visibility",
-        $("#player-two").css("visibility") == "hidden" ? "visible" : "hidden"
-    )
-
-if ($("#player-one").css("visibility") == "visible") {
-    console.log("player 1")
-} else {
-    console.log("player 2");
-}
-
+  $("#player-one").css(
+    "visibility",
+    $("#player-one").css("visibility") == "hidden" ? "visible" : "hidden"
+  );
+  $("#player-two").css(
+    "visibility",
+    $("#player-two").css("visibility") == "hidden" ? "visible" : "hidden"
+  );
+  if ($("#player-one").css("visibility") == "visible") {
+    console.log("Player 1");
+  } else {
+    console.log("Player 2");
+  }
 });
 
 
