@@ -65,27 +65,52 @@ function boxSelection(event) {
   checkWin();
 }
 
+
 function turnToggle(turn) {
-  if (turn === 0) {
-    return (playerTurn = 1);
-  } else {
-    return (playerTurn = 0);
-  }
+  
+    if (turn === 0) {
+        return (playerTurn = 1);
+    } else {
+        return (playerTurn = 0);
+    }
+}
+
+function changeColor(turn, thisBtn){
+    
+    
+
 }
 
 turnToggle(playerTurn);
+
 $(".box").click(function () {
-  $("#player-one").css(
-    "visibility",
-    $("#player-one").css("visibility") == "hidden" ? "visible" : "hidden"
-  );
-  $("#player-two").css(
-    "visibility",
-    $("#player-two").css("visibility") == "hidden" ? "visible" : "hidden"
-  );
-  if ($("#player-one").css("visibility") == "visible") {
-    console.log("Player 1");
-  } else {
-    console.log("Player 2");
-  }
+
+    $("#player-one").css(
+        "visibility",
+        $("#player-one").css("visibility") == "hidden" ? "visible" : "hidden"
+    );
+    $("#player-two").css(
+        "visibility",
+        $("#player-two").css("visibility") == "hidden" ? "visible" : "hidden"
+    )
+
+    if ($("#player-one").css("visibility") == "visible") {
+        console.log("player 1")
+    } else {
+        console.log("player 2");
+    }
+
+    console.log($(this).attr("id"))
+
+    let thisBtn = $(this).attr("id");
+
+    changeColor(playerTurn, thisBtn)
+
+
 });
+
+
+
+
+
+
