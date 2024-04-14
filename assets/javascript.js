@@ -46,7 +46,7 @@ function checkWin(playerOneArray, playerTwoArray, playerTurn) {
         playerOneArray.includes(winConditions[i][1]) &&
         playerOneArray.includes(winConditions[i][2])
       )
-        return console.log("Player 1 Wins!");
+        return alert("Player 1 Wins!");
     }
   } else if (playerTurn == 1) {
     for (let i = 0; i < 8; i++) {
@@ -55,7 +55,7 @@ function checkWin(playerOneArray, playerTwoArray, playerTurn) {
         playerTwoArray.includes(winConditions[i][1]) &&
         playerTwoArray.includes(winConditions[i][2])
       )
-        return console.log("Player 2 wins!");
+        return alert("Player 2 wins!");
     }
   }
 }
@@ -86,7 +86,7 @@ function startGame(event) {
 
 function boxSelection(event) {
   turnToggle(playerTurn);
-  console.log("clicked!", $(this).attr("id"));
+  // console.log("clicked!", $(this).attr("id"));
 
   if (playerTurn == 0) {
     let index = $(this).attr("id").length - 1;
@@ -95,38 +95,7 @@ function boxSelection(event) {
     let index = $(this).attr("id").length - 1;
     playerTwoArray.push($(this).attr("id")[index]);
   }
-  checkWin(playerOneArray, playerTwoArray, playerTurn);
 
-  console.log("Player one array", playerOneArray);
-  console.log("Player two array", playerTwoArray);
-}
-
-function turnToggle(turn) {
-  if (turn === 0) {
-    console.log("player 1");
-    return (playerTurn = 1);
-  }
-  if (turn === 1) {
-    console.log("player 2");
-    return (playerTurn = 0);
-  }
-}
-
-function changeColor(turn, thisBtn) {
-  console.log(turn);
-  console.log(thisBtn);
-  if (turn === 0) {
-    console.log("red");
-    $(thisBtn).css("background-color", "red");
-  }
-
-  if (turn === 1) {
-    console.log("black");
-    $(thisBtn).css("background-color", "black");
-  }
-}
-
-$(".box").click(function () {
   $("#player-one").css(
     "visibility",
     $("#player-one").css("visibility") == "hidden" ? "visible" : "hidden"
@@ -137,15 +106,46 @@ $(".box").click(function () {
   );
 
   if ($("#player-one").css("visibility") == "visible") {
-    console.log("player 1");
+    // console.log("player 1");
   } else {
-    console.log("player 2");
+    // console.log("player 2");
   }
 
-  console.log(this);
-  console.log($(this).attr("id"));
+  console.log("this", this);
+  console.log("this id", $(this).attr("id"));
 
   let thisBtn = $(this);
 
   changeColor(playerTurn, thisBtn);
-});
+
+  // console.log("Player one array", playerOneArray);
+  // console.log("Player two array", playerTwoArray);
+
+  checkWin(playerOneArray, playerTwoArray, playerTurn);
+  console.log(playerTurn);
+}
+
+function turnToggle(turn) {
+  if (turn === 0) {
+    // console.log("player 1");
+    return (playerTurn = 1);
+  }
+  if (turn === 1) {
+    // console.log("player 2");
+    return (playerTurn = 0);
+  }
+}
+
+function changeColor(turn, thisBtn) {
+  // console.log(turn);
+  // console.log(thisBtn);
+  if (turn === 0) {
+    console.log("red");
+    $(thisBtn).css("background-color", "red");
+  }
+
+  if (turn === 1) {
+    console.log("black");
+    $(thisBtn).css("background-color", "black");
+  }
+}
