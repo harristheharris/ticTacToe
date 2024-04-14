@@ -21,7 +21,7 @@ bottomLeft.addEventListener("click", boxSelection);
 bottomMiddle.addEventListener("click", boxSelection);
 bottomRight.addEventListener("click", boxSelection);
 
-var playerTurn = 1;
+var playerTurn = 0;
 var playerOneArray = [];
 var playerTwoArray = [];
 
@@ -60,15 +60,6 @@ function checkWin(playerOneArray, playerTwoArray, playerTurn) {
   }
 }
 
-function changeTurn(turn) {
-  if (turn == 0) {
-    turn = 1;
-  } else {
-    turn = 0;
-  }
-  return turn;
-}
-
 function startGame(event) {
   event.preventDefault();
   const tup = document.getElementById("tup");
@@ -85,7 +76,6 @@ function startGame(event) {
 }
 
 function boxSelection(event) {
-  turnToggle(playerTurn);
   // console.log("clicked!", $(this).attr("id"));
 
   if (playerTurn == 0) {
@@ -122,7 +112,8 @@ function boxSelection(event) {
   // console.log("Player two array", playerTwoArray);
 
   checkWin(playerOneArray, playerTwoArray, playerTurn);
-  console.log(playerTurn);
+
+  turnToggle(playerTurn);
 }
 
 function turnToggle(turn) {
