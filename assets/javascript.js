@@ -22,35 +22,47 @@ bottomMiddle.addEventListener("click", boxSelection);
 bottomRight.addEventListener("click", boxSelection);
 
 var playerTurn = 0;
-console.log("Player 1")
+
+console.log("Player 1");
+
+function checkWin() {
+  if (
+    $("#item1").css("background-color") ==
+      $("#item2").css("background-color") &&
+    $("#item1").css("background-color") == $("#item3").css("background-color")
+  ) {
+    console.log("Game Over!");
+  }
+}
 
 function changeTurn(turn) {
-    if (turn == 0) {
-        turn = 1;
-    } else {
-        turn = 0;
-    }
-    return turn;
+  if (turn == 0) {
+    turn = 1;
+  } else {
+    turn = 0;
+  }
+  return turn;
 }
 
 function startGame(event) {
-    event.preventDefault();
-    const tup = document.getElementById("tup");
-    const box = document.querySelectorAll(".box");
+  event.preventDefault();
+  const tup = document.getElementById("tup");
+  const box = document.querySelectorAll(".box");
 
-    tup.innerHTML = "";
-    console.log("start game!");
+  tup.innerHTML = "";
+  console.log("start game!");
 
-    //arrow function being evoked right away
-    box.forEach((boxItems) => {
-        boxItems.setAttribute("style", "visibility: visible");
-        console.log(boxItems);
-    });
+  //arrow function being evoked right away
+  box.forEach((boxItems) => {
+    boxItems.setAttribute("style", "visibility: visible");
+    console.log(boxItems);
+  });
 }
 
 function boxSelection(event) {
-    turnToggle(playerTurn);
-    console.log("clicked!");
+  turnToggle(playerTurn);
+  console.log("clicked!", $(this).attr("id"));
+  checkWin();
 }
 
 
@@ -71,6 +83,7 @@ function changeColor(turn, thisBtn){
 turnToggle(playerTurn);
 
 $(".box").click(function () {
+
     $("#player-one").css(
         "visibility",
         $("#player-one").css("visibility") == "hidden" ? "visible" : "hidden"
@@ -94,6 +107,7 @@ $(".box").click(function () {
 
 
 });
+
 
 
 

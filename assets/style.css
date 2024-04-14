@@ -1,7 +1,7 @@
 :root {
   --box-min-size: 50px;
-  --box-background-color1: #0278bd;
-  --box-background-color2: #04a1b6;
+  /* --box-background-color1: #fff;
+  --box-background-color2: #fff; */
 }
 
 body {
@@ -14,23 +14,23 @@ h2 {
   margin-bottom: 0.75em;
 }
 
-#turn-tup{
-  visibility: visible ; /*to be hidden*/
+#turn-tup {
+  visibility: visible; /*to be hidden*/
   position: absolute;
   left: 100px;
 }
 
-.turns{
+.turns {
   font-size: 1.75em;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
-#player-one{
-display: visible;
-visibility: visible;
+#player-one {
+  display: visible;
+  visibility: visible;
 }
 
-#player-two{
+#player-two {
   display: hidden;
   visibility: hidden;
 }
@@ -77,55 +77,55 @@ visibility: visible;
 #item1 {
   grid-column: 1;
   grid-row: 1;
-  background-color: var(--box-background-color1)
+  /* background-color: var(--box-background-color1); */
 }
 
 #item2 {
   grid-column: 2;
   grid-row: 1;
-  background-color: var(--box-background-color2);
+  /* background-color: var(--box-background-color2); */
 }
 
 #item3 {
   grid-column: 3;
   grid-row: 1;
-  background-color: var(--box-background-color1)
+  /* background-color: var(--box-background-color1); */
 }
 
 #item4 {
   grid-column: 1;
   grid-row: 2;
-  background-color: var(--box-background-color2);
+  /* background-color: var(--box-background-color2); */
 }
 
 #item5 {
   grid-column: 2;
   grid-row: 2;
-  background-color: var(--box-background-color1)
+  /* background-color: var(--box-background-color1); */
 }
 
 #item6 {
   grid-column: 3;
   grid-row: 2;
-  background-color: var(--box-background-color2);
+  /* background-color: var(--box-background-color2); */
 }
 
 #item7 {
   grid-column: 1;
   grid-row: 3;
-  background-color: var(--box-background-color1)
+  /* background-color: var(--box-background-color1); */
 }
 
 #item8 {
   grid-column: 2;
   grid-row: 3;
-  background-color: var(--box-background-color2);
+  /* background-color: var(--box-background-color2); */
 }
 
 #item9 {
   grid-column: 3;
   grid-row: 3;
-  background-color: var(--box-background-color1)
+  /* background-color: var(--box-background-color1); */
 }
 
 #tup {
@@ -155,5 +155,5 @@ visibility: visible;
 }
 
 .box:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
