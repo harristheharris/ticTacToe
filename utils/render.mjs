@@ -10,15 +10,11 @@ export const render = { changeColor, changeVisible };
  * @param {Object} thisBtn  The current clicked button.
  */
 function changeColor(turn, thisBtn) {
-  console.log(turn);
-  console.log(thisBtn);
   if (turn === 0) {
-    console.log("red");
     $(thisBtn).css("background-color", "red");
   }
 
   if (turn === 1) {
-    console.log("black");
     $(thisBtn).css("background-color", "black");
   }
 }

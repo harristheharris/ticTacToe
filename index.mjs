@@ -39,13 +39,10 @@ function startGame(event) {
 
   box.forEach((boxItems) => {
     boxItems.setAttribute("style", "visibility: visible");
-    console.log(boxItems);
   });
 }
 
 function boxSelection(event) {
-  console.log(this);
-  console.log("clicked!", $(this).attr("id"));
   let thisBtn = $(this);
 
   verify.verificationCenter(playerTurn, thisBtn);
