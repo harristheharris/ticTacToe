@@ -1,6 +1,6 @@
-import { render } from './utils/render.mjs';
-import { timeGod } from './utils/turns.mjs';
-import { verify } from './utils/verification.mjs';
+import { render } from "./utils/render.mjs";
+import { timeGod } from "./utils/turns.mjs";
+import { verify } from "./utils/verification.mjs";
 
 const strtBttn = document.getElementById("start-btn");
 
@@ -26,31 +26,30 @@ bottomMiddle.addEventListener("click", boxSelection);
 bottomRight.addEventListener("click", boxSelection);
 
 var playerTurn = 1;
-var playerOneArray = [];
-var playerTwoArray = [];
+// var playerOneArray = [];
+// var playerTwoArray = [];
 
 function startGame(event) {
-    event.preventDefault();
-    const tup = document.getElementById("tup");
-    const box = document.querySelectorAll(".box");
+  event.preventDefault();
+  const tup = document.getElementById("tup");
+  const box = document.querySelectorAll(".box");
 
-    tup.innerHTML = "";
-    console.log("start game!");
+  tup.innerHTML = "";
+  console.log("start game!");
 
-    box.forEach((boxItems) => {
-        boxItems.setAttribute("style", "visibility: visible");
-        console.log(boxItems);
-    });
+  box.forEach((boxItems) => {
+    boxItems.setAttribute("style", "visibility: visible");
+    console.log(boxItems);
+  });
 }
 
 function boxSelection(event) {
-    console.log(this);
-    console.log("clicked!", $(this).attr("id"));
-    let thisBtn = $(this);
-    
-    verify.verificationCenter(playerTurn, thisBtn);
-    render.changeVisible();
-    timeGod.turnToggle(playerTurn);
-    render.changeColor(playerTurn, thisBtn);
+  console.log(this);
+  console.log("clicked!", $(this).attr("id"));
+  let thisBtn = $(this);
 
+  verify.verificationCenter(playerTurn, thisBtn);
+  render.changeVisible();
+  playerTurn = timeGod.turnToggle(playerTurn);
+  render.changeColor(playerTurn, thisBtn);
 }
