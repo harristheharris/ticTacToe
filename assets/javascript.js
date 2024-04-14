@@ -69,19 +69,30 @@ function boxSelection(event) {
 function turnToggle(turn) {
   
     if (turn === 0) {
+        console.log("player 1")
         return (playerTurn = 1);
-    } else {
+    }  
+    if (turn === 1) {
+        console.log("player 2")
         return (playerTurn = 0);
     }
 }
 
 function changeColor(turn, thisBtn){
     
-    
+    console.log(turn)
+    console.log(thisBtn)
+    if (turn === 0) {
+        console.log("p1 red")
+        
+    }
+     
+    if (turn === 1) {
+        console.log(" p2 black")
+        
+    }
 
 }
-
-turnToggle(playerTurn);
 
 $(".box").click(function () {
 
@@ -100,9 +111,10 @@ $(".box").click(function () {
         console.log("player 2");
     }
 
+    console.log(this);
     console.log($(this).attr("id"))
 
-    let thisBtn = $(this).attr("id");
+    let thisBtn = $(this);
 
     changeColor(playerTurn, thisBtn)
 

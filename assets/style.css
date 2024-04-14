@@ -87,6 +87,7 @@ h2 {
 }
 
 #item3 {
+  color: #ff0000;
   grid-column: 3;
   grid-row: 1;
   /* background-color: var(--box-background-color1); */
