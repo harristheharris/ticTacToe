@@ -22,6 +22,7 @@ bottomMiddle.addEventListener("click", boxSelection);
 bottomRight.addEventListener("click", boxSelection);
 
 var playerTurn = 0;
+console.log("Player 1")
 
 function changeTurn(turn) {
     if (turn == 0) {
@@ -47,12 +48,10 @@ function startGame(event) {
     });
 }
 
-
-function boxSelection(event){
+function boxSelection(event) {
     turnToggle(playerTurn);
     console.log("clicked!");
-
-};
+}
 
 //as of now, we have a start button and a board that is displayed once the start button is pressed.
 //what else do we need??
@@ -63,26 +62,34 @@ function boxSelection(event){
 //when the start button is pressed player1 turn is set right away to play
 //when a square is selcted to place a symbol the turn is switched
 function turnToggle(turn) {
-    let toggleTurns = $(".turns");
-    console.log(toggleTurns);
-    toggleTurns.each(toggle());
+    // let toggleTurns = $(".turns");
+    // console.log(toggleTurns);
 
-    if (turn === 0){
-        
-        return playerTurn = 1;
+    if (turn === 0) {
+        return (playerTurn = 1);
     } else {
-        return playerTurn = 0; 
+        return (playerTurn = 0);
     }
 }
 
 turnToggle(playerTurn);
 $(".box").click(function () {
-  $("#player-one").css(
-    "visibility",
-    $("#player-one").css("visibility") == "hidden" ? "visible" : "hidden"
-  );
-  $("#player-two").css(
-    "visibility",
-    $("#player-two").css("visibility") == "hidden" ? "visible" : "hidden"
-  );
+    $("#player-one").css(
+        "visibility",
+        $("#player-one").css("visibility") == "hidden" ? "visible" : "hidden"
+    );
+    $("#player-two").css(
+        "visibility",
+        $("#player-two").css("visibility") == "hidden" ? "visible" : "hidden"
+    )
+
+if ($("#player-one").css("visibility") == "visible") {
+    console.log("player 1")
+} else {
+    console.log("player 2");
+}
+
 });
+
+
+
