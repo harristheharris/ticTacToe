@@ -27,7 +27,7 @@ h2 {
 
 #player-one {
   display: visible;
-  visibility: visible;
+  visibility: hidden;
   color: red;
 }
 

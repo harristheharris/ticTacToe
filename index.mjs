@@ -40,6 +40,7 @@ function startGame(event) {
   box.forEach((boxItems) => {
     boxItems.setAttribute("style", "visibility: visible");
   });
+  $("#player-one").css("visibility", "visible");
 }
 
 function boxSelection(event) {
