@@ -27,6 +27,15 @@ var playerTwoArray = [];
 
 console.log("Player 1");
 
+/**
+ * Checks to see if/when a player gets 3 in a row.
+ *
+ * @author Brandon Carter <brandon.d.carter99@gmail.com>
+ *
+ * @param {Array} playerOneArray  Array of chosen boxes for player one.
+ * @param {Array} playerTwoArray  Array of chosen boxes for player two.
+ * @param {Number} playerTurn     Either 0 or 1 depending on which turn it is.
+ */
 function checkWin(playerOneArray, playerTwoArray, playerTurn) {
   var winConditions = [
     ["1", "2", "3"],
@@ -68,7 +77,6 @@ function startGame(event) {
   tup.innerHTML = "";
   console.log("start game!");
 
-  //arrow function being evoked right away
   box.forEach((boxItems) => {
     boxItems.setAttribute("style", "visibility: visible");
     console.log(boxItems);
@@ -76,8 +84,6 @@ function startGame(event) {
 }
 
 function boxSelection(event) {
-  // console.log("clicked!", $(this).attr("id"));
-
   if (playerTurn == 0) {
     let index = $(this).attr("id").length - 1;
     playerOneArray.push($(this).attr("id")[index]);
@@ -95,21 +101,12 @@ function boxSelection(event) {
     $("#player-two").css("visibility") == "hidden" ? "visible" : "hidden"
   );
 
-  if ($("#player-one").css("visibility") == "visible") {
-    // console.log("player 1");
-  } else {
-    // console.log("player 2");
-  }
-
   console.log("this", this);
   console.log("this id", $(this).attr("id"));
 
   let thisBtn = $(this);
 
   changeColor(playerTurn, thisBtn);
-
-  // console.log("Player one array", playerOneArray);
-  // console.log("Player two array", playerTwoArray);
 
   checkWin(playerOneArray, playerTwoArray, playerTurn);
 
@@ -118,18 +115,23 @@ function boxSelection(event) {
 
 function turnToggle(turn) {
   if (turn === 0) {
-    // console.log("player 1");
     return (playerTurn = 1);
   }
   if (turn === 1) {
-    // console.log("player 2");
     return (playerTurn = 0);
   }
 }
 
+/**
+ * Changes the color of the box the player has just clicked, based on
+ * which player clicked it.
+ *
+ * @author Anthony Harris <anthony.harris7777@gmail.com>
+ *
+ * @param {Number} turn     Either 0 or 1.
+ * @param {Object} thisBtn  The current clicked button.
+ */
 function changeColor(turn, thisBtn) {
-  // console.log(turn);
-  // console.log(thisBtn);
   if (turn === 0) {
     console.log("red");
     $(thisBtn).css("background-color", "red");
