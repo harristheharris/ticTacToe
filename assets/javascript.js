@@ -53,18 +53,9 @@ function boxSelection(event) {
     console.log("clicked!");
 }
 
-//as of now, we have a start button and a board that is displayed once the start button is pressed.
-//what else do we need??
-//We choose to have turns alternate and therefore, the symbol place to alternate
-//with this in mind I want a turn indication to appear for whose turn it is
 
-//determining turn
-//when the start button is pressed player1 turn is set right away to play
-//when a square is selcted to place a symbol the turn is switched
 function turnToggle(turn) {
-    // let toggleTurns = $(".turns");
-    // console.log(toggleTurns);
-
+  
     if (turn === 0) {
         return (playerTurn = 1);
     } else {
@@ -72,7 +63,13 @@ function turnToggle(turn) {
     }
 }
 
+function changeColor(turn, thisBtn){
+    
+
+}
+
 turnToggle(playerTurn);
+
 $(".box").click(function () {
     $("#player-one").css(
         "visibility",
@@ -83,13 +80,22 @@ $(".box").click(function () {
         $("#player-two").css("visibility") == "hidden" ? "visible" : "hidden"
     )
 
-if ($("#player-one").css("visibility") == "visible") {
-    console.log("player 1")
-} else {
-    console.log("player 2");
-}
+    if ($("#player-one").css("visibility") == "visible") {
+        console.log("player 1")
+    } else {
+        console.log("player 2");
+    }
+
+    console.log($(this).attr("id"))
+
+    let thisBtn = $(this).attr("id");
+
+    changeColor(playerTurn, thisBtn)
+
 
 });
+
+
 
 
 
