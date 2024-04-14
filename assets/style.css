@@ -28,6 +28,7 @@ h2 {
 #player-one {
   display: visible;
   visibility: visible;
+  color: red;
 }
 
 #player-two {
