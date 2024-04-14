@@ -50,7 +50,7 @@ function boxSelection(event) {
     
     verify.verificationCenter(playerTurn, thisBtn);
     render.changeVisible();
-    timeGod.turnToggle(playerTurn);
+    playerTurn = timeGod.turnToggle(playerTurn);
     render.changeColor(playerTurn, thisBtn);
 
 }
