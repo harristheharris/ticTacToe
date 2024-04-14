@@ -32,12 +32,6 @@ function changeVisible() {
     "visibility",
     $("#player-two").css("visibility") == "hidden" ? "visible" : "hidden"
   );
-
-  if ($("#player-one").css("visibility") == "visible") {
-    console.log("player 1");
-  } else {
-    console.log("player 2");
-  }
 }
 
 export default render;

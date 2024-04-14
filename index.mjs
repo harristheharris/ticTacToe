@@ -25,7 +25,7 @@ bottomLeft.addEventListener("click", boxSelection);
 bottomMiddle.addEventListener("click", boxSelection);
 bottomRight.addEventListener("click", boxSelection);
 
-var playerTurn = 1;
+var playerTurn = 0;
 // var playerOneArray = [];
 // var playerTwoArray = [];
 
@@ -50,6 +50,6 @@ function boxSelection(event) {
 
   verify.verificationCenter(playerTurn, thisBtn);
   render.changeVisible();
-  playerTurn = timeGod.turnToggle(playerTurn);
   render.changeColor(playerTurn, thisBtn);
+  playerTurn = timeGod.turnToggle(playerTurn);
 }
