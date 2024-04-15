@@ -16,14 +16,20 @@ var playerTwoArray = [];
  * @param {Object} thisBtn 
  */
 function verificationCenter(playerTurn, thisBtn) {
-  if (playerTurn == 0) {
-    let index = $(thisBtn).attr("id").length - 1;
-    playerOneArray.push($(thisBtn).attr("id")[index]);
-  } else {
-    let index = $(thisBtn).attr("id").length - 1;
-    playerTwoArray.push($(thisBtn).attr("id")[index]);
-  }
-  checkWin(playerOneArray, playerTwoArray, playerTurn);
+
+  let valid = verifyValidSpace(playerOneArray, playerTwoArray, thisBtn);
+
+  if(valid){
+    if (playerTurn == 0) {
+      let index = $(thisBtn).attr("id").length - 1;
+      playerOneArray.push($(thisBtn).attr("id")[index]);
+    } else {
+      let index = $(thisBtn).attr("id").length - 1;
+      playerTwoArray.push($(thisBtn).attr("id")[index]);
+    }
+    checkWin(playerOneArray, playerTwoArray, playerTurn);
+    return true;
+  } else return false;
 }
 
 /**
@@ -65,6 +71,15 @@ function checkWin(playerOneArray, playerTwoArray, playerTurn) {
       )
         return console.log("Player 2 wins!");
     }
+  }
+}
+
+function verifyValidSpace(playerOneArray, playerTwoArray, thisBtn){
+  let index = $(thisBtn).attr("id").length - 1;
+  if(!(playerOneArray.includes($(thisBtn).attr("id")[index])) && !(playerTwoArray.includes($(thisBtn).attr("id")[index]))){
+    return true;
+  } else {
+    return false;
   }
 }
 
