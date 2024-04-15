@@ -67,7 +67,7 @@ h2 {
   visibility: hidden;
   min-height: var(--box-min-size);
   min-width: var(--box-min-size);
-  border: 2px solid black;
+  border: 2px solid yellow;
   display: flex;
   justify-content: center;
   align-items: center;
