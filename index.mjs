@@ -69,8 +69,11 @@ function startGame(event) {
 function boxSelection(event) {
   let thisBtn = $(this);
 
-  verify.verificationCenter(playerTurn, thisBtn);
-  render.changeVisible();
-  render.changeColor(playerTurn, thisBtn);
-  playerTurn = timeGod.turnToggle(playerTurn);
+  let valid = verify.verificationCenter(playerTurn, thisBtn);
+
+  if(valid){
+    render.changeVisible();
+    render.changeColor(playerTurn, thisBtn);
+    playerTurn = timeGod.turnToggle(playerTurn);
+  }
 }
