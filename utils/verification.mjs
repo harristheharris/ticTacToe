@@ -1,9 +1,20 @@
 export const verify = { verificationCenter };
 
-// var playerTurn = 1;
+/*
+================================================================
+                  Variable Declarations
+================================================================
+*/
 var playerOneArray = [];
 var playerTwoArray = [];
 
+/**
+ * Checks which player clicked on a box and adds the number of that box
+ * to their array. Then calls the checkWin function to see if they won.
+ * 
+ * @param {Number} playerTurn 
+ * @param {Object} thisBtn 
+ */
 function verificationCenter(playerTurn, thisBtn) {
   if (playerTurn == 0) {
     let index = $(thisBtn).attr("id").length - 1;

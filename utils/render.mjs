@@ -19,6 +19,11 @@ function changeColor(turn, thisBtn) {
   }
 }
 
+/**
+ * Toggles the player name's visibility.
+ * 
+ * @author Brandon Carter
+ */
 function changeVisible() {
   $("#player-one").css(
     "visibility",

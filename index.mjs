@@ -1,7 +1,17 @@
+/*
+================================================================
+                  Import statements
+================================================================
+*/
 import { render } from "./utils/render.mjs";
 import { timeGod } from "./utils/turns.mjs";
 import { verify } from "./utils/verification.mjs";
 
+/*
+================================================================
+                  Variable declarations
+================================================================
+*/
 const strtBttn = document.getElementById("start-btn");
 
 const topLeft = document.getElementById("item1");
@@ -14,6 +24,13 @@ const bottomLeft = document.getElementById("item7");
 const bottomMiddle = document.getElementById("item8");
 const bottomRight = document.getElementById("item9");
 
+var playerTurn = 0;
+
+/*
+================================================================
+                  Event Listeners
+================================================================
+*/
 strtBttn.addEventListener("click", startGame);
 topLeft.addEventListener("click", boxSelection);
 topMiddle.addEventListener("click", boxSelection);
@@ -25,10 +42,12 @@ bottomLeft.addEventListener("click", boxSelection);
 bottomMiddle.addEventListener("click", boxSelection);
 bottomRight.addEventListener("click", boxSelection);
 
-var playerTurn = 0;
-// var playerOneArray = [];
-// var playerTwoArray = [];
 
+/**
+ * Function that runs when the start button is pressed.
+ * Reveals the game board and the player one label.
+ * 
+ */
 function startGame(event) {
   event.preventDefault();
   const tup = document.getElementById("tup");
@@ -43,6 +62,10 @@ function startGame(event) {
   $("#player-one").css("visibility", "visible");
 }
 
+/**
+ * Function that runs anytime a box in the game board is clicked.
+ * 
+ */
 function boxSelection(event) {
   let thisBtn = $(this);
 
