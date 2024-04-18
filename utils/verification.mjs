@@ -1,4 +1,4 @@
-export const verify = { verificationCenter };
+export { verificationCenter, verifyTie, playerOneArray, playerTwoArray }
 
 /*
 ================================================================
@@ -17,9 +17,9 @@ var playerTwoArray = [];
  */
 function verificationCenter(playerTurn, thisBtn) {
 
-  let valid = verifyValidSpace(playerOneArray, playerTwoArray, thisBtn);
+  let validSpace = verifyValidSpace(playerOneArray, playerTwoArray, thisBtn);
 
-  if(valid){
+  if(validSpace){
     if (playerTurn == 0) {
       let index = $(thisBtn).attr("id").length - 1;
       playerOneArray.push($(thisBtn).attr("id")[index]);
@@ -29,7 +29,14 @@ function verificationCenter(playerTurn, thisBtn) {
     }
     checkWin(playerOneArray, playerTwoArray, playerTurn);
     return true;
-  } else return false;
+    // let tie = verifyTie(playerOneArray, playerTwoArray);
+
+  //   if(!tie){
+  //     return true;
+  //   } else return false;
+    
+  // } else return false;
+  }
 }
 
 /**
@@ -83,4 +90,15 @@ function verifyValidSpace(playerOneArray, playerTwoArray, thisBtn){
   }
 }
 
-export default verify;
+function verifyTie(playerOneArray, playerTwoArray){
+  let arrLenOne = playerOneArray.length;
+  let arrLenTwo = playerTwoArray.length;
+  let totalArr = arrLenOne + arrLenTwo;
+
+  if (totalArr + 1 == 10){
+    console.log('tie!')
+    return true;
+  } else {
+    return false;
+  }
+}
