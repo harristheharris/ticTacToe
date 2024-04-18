@@ -5,7 +5,7 @@
 */
 import { render } from "./utils/render.mjs";
 import { timeGod } from "./utils/turns.mjs";
-import { verify } from "./utils/verification.mjs";
+import { verificationCenter, verifyTie, playerOneArray, playerTwoArray } from "./utils/verification.mjs";
 
 /*
 ================================================================
@@ -69,11 +69,15 @@ function startGame(event) {
 function boxSelection(event) {
   let thisBtn = $(this);
 
-  let valid = verify.verificationCenter(playerTurn, thisBtn);
+  let valid = verificationCenter(playerTurn, thisBtn);
 
   if(valid){
     render.changeVisible();
     render.changeColor(playerTurn, thisBtn);
     playerTurn = timeGod.turnToggle(playerTurn);
+  }
+  let tie = verifyTie(playerOneArray, playerTwoArray);
+  if(tie){
+    console.log('end')
   }
 }
