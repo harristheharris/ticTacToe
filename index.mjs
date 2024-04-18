@@ -66,7 +66,7 @@ function startGame(event) {
  * Function that runs anytime a box in the game board is clicked.
  * 
  */
-function boxSelection(event) {
+function boxSelection() {
   let thisBtn = $(this);
 
   let valid = verificationCenter(playerTurn, thisBtn);
