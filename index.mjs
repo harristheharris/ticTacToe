@@ -69,13 +69,33 @@ function startGame(event) {
 function boxSelection() {
   let thisBtn = $(this);
 
-  let valid = verificationCenter(playerTurn, thisBtn);
+  console.log('this button: ' + $(thisBtn).attr('id'));
 
-  if(valid){
+  let winResult = verificationCenter(playerTurn, thisBtn);
+
+  // removes event listener from button once clicked
+  let currentBtn = $(thisBtn).attr('id');
+  currentBtn = document.getElementById(currentBtn);
+  currentBtn.removeEventListener('click' , boxSelection);
+
+  // if(valid){
     render.changeVisible();
     render.changeColor(playerTurn, thisBtn);
     playerTurn = timeGod.turnToggle(playerTurn);
+  // }
+
+  if(winResult){
+    topLeft.removeEventListener("click", boxSelection);
+    topMiddle.removeEventListener("click", boxSelection);
+    topRight.removeEventListener("click", boxSelection);
+    middleLeft.removeEventListener("click", boxSelection);
+    center.removeEventListener("click", boxSelection);
+    middleRight.removeEventListener("click", boxSelection);
+    bottomLeft.removeEventListener("click", boxSelection);
+    bottomMiddle.removeEventListener("click", boxSelection);
+    bottomRight.removeEventListener("click", boxSelection);
   }
+
   let tie = verifyTie(playerOneArray, playerTwoArray);
   if(tie){
     console.log('end')
