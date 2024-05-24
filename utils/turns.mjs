@@ -2,8 +2,8 @@ export const timeGod = { turnToggle };
 
 /**
  * Toggles the player turn between 0 and 1.
- * 
- * @param {Number} turn 
+ *
+ * @param {Number} turn
  * @returns {Number}
  */
 function turnToggle(turn) {
