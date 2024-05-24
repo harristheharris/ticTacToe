@@ -1,4 +1,4 @@
-export { verificationCenter, verifyTie, playerOneArray, playerTwoArray }
+export { verificationCenter, verifyTie, playerOneArray, playerTwoArray };
 
 /*
 ================================================================
@@ -11,33 +11,21 @@ var playerTwoArray = [];
 /**
  * Checks which player clicked on a box and adds the number of that box
  * to their array. Then calls the checkWin function to see if they won.
- * 
- * @param {Number} playerTurn 
- * @param {Object} thisBtn 
+ *
+ * @param {Number} playerTurn
+ * @param {Object} thisBtn
  */
 function verificationCenter(playerTurn, thisBtn) {
-
-  // let validSpace = verifyValidSpace(playerOneArray, playerTwoArray, thisBtn);
-
-  // if(validSpace){
-    if (playerTurn == 0) {
-      let index = $(thisBtn).attr("id").length - 1;
-      playerOneArray.push($(thisBtn).attr("id")[index]);
-    } else {
-      let index = $(thisBtn).attr("id").length - 1;
-      playerTwoArray.push($(thisBtn).attr("id")[index]);
-    }
-    let winResult = checkWin(playerOneArray, playerTwoArray, playerTurn);
-    return winResult;
-    // let tie = verifyTie(playerOneArray, playerTwoArray);
-
-  //   if(!tie){
-  //     return true;
-  //   } else return false;
-    
-  // } else return false;
+  if (playerTurn == 0) {
+    let index = $(thisBtn).attr("id").length - 1;
+    playerOneArray.push($(thisBtn).attr("id")[index]);
+  } else {
+    let index = $(thisBtn).attr("id").length - 1;
+    playerTwoArray.push($(thisBtn).attr("id")[index]);
   }
-// }
+  let winResult = checkWin(playerOneArray, playerTwoArray, playerTurn);
+  return winResult;
+}
 
 /**
  * Checks to see if/when a player gets 3 in a row.
@@ -66,7 +54,7 @@ function checkWin(playerOneArray, playerTwoArray, playerTurn) {
         playerOneArray.includes(winConditions[i][0]) &&
         playerOneArray.includes(winConditions[i][1]) &&
         playerOneArray.includes(winConditions[i][2])
-      ){
+      ) {
         console.log("Player 1 Wins!");
         return true;
       }
@@ -77,7 +65,7 @@ function checkWin(playerOneArray, playerTwoArray, playerTurn) {
         playerTwoArray.includes(winConditions[i][0]) &&
         playerTwoArray.includes(winConditions[i][1]) &&
         playerTwoArray.includes(winConditions[i][2])
-      ){
+      ) {
         console.log("Player 2 wins!");
         return true;
       }
@@ -85,22 +73,13 @@ function checkWin(playerOneArray, playerTwoArray, playerTurn) {
   }
 }
 
-function verifyValidSpace(playerOneArray, playerTwoArray, thisBtn){
-  let index = $(thisBtn).attr("id").length - 1;
-  if(!(playerOneArray.includes($(thisBtn).attr("id")[index])) && !(playerTwoArray.includes($(thisBtn).attr("id")[index]))){
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function verifyTie(playerOneArray, playerTwoArray){
+function verifyTie(playerOneArray, playerTwoArray) {
   let arrLenOne = playerOneArray.length;
   let arrLenTwo = playerTwoArray.length;
   let totalArr = arrLenOne + arrLenTwo;
 
-  if (totalArr + 1 == 10){
-    console.log('tie!')
+  if (totalArr + 1 == 10) {
+    console.log("tie!");
     return true;
   } else {
     return false;
