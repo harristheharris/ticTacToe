@@ -17,9 +17,9 @@ var playerTwoArray = [];
  */
 function verificationCenter(playerTurn, thisBtn) {
 
-  let validSpace = verifyValidSpace(playerOneArray, playerTwoArray, thisBtn);
+  // let validSpace = verifyValidSpace(playerOneArray, playerTwoArray, thisBtn);
 
-  if(validSpace){
+  // if(validSpace){
     if (playerTurn == 0) {
       let index = $(thisBtn).attr("id").length - 1;
       playerOneArray.push($(thisBtn).attr("id")[index]);
@@ -27,8 +27,8 @@ function verificationCenter(playerTurn, thisBtn) {
       let index = $(thisBtn).attr("id").length - 1;
       playerTwoArray.push($(thisBtn).attr("id")[index]);
     }
-    checkWin(playerOneArray, playerTwoArray, playerTurn);
-    return true;
+    let winResult = checkWin(playerOneArray, playerTwoArray, playerTurn);
+    return winResult;
     // let tie = verifyTie(playerOneArray, playerTwoArray);
 
   //   if(!tie){
@@ -37,7 +37,7 @@ function verificationCenter(playerTurn, thisBtn) {
     
   // } else return false;
   }
-}
+// }
 
 /**
  * Checks to see if/when a player gets 3 in a row.
@@ -66,8 +66,10 @@ function checkWin(playerOneArray, playerTwoArray, playerTurn) {
         playerOneArray.includes(winConditions[i][0]) &&
         playerOneArray.includes(winConditions[i][1]) &&
         playerOneArray.includes(winConditions[i][2])
-      )
-        return console.log("Player 1 Wins!");
+      ){
+        console.log("Player 1 Wins!");
+        return true;
+      }
     }
   } else if (playerTurn == 1) {
     for (let i = 0; i < 8; i++) {
@@ -75,8 +77,10 @@ function checkWin(playerOneArray, playerTwoArray, playerTurn) {
         playerTwoArray.includes(winConditions[i][0]) &&
         playerTwoArray.includes(winConditions[i][1]) &&
         playerTwoArray.includes(winConditions[i][2])
-      )
-        return console.log("Player 2 wins!");
+      ){
+        console.log("Player 2 wins!");
+        return true;
+      }
     }
   }
 }
