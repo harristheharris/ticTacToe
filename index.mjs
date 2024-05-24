@@ -5,7 +5,12 @@
 */
 import { render } from "./utils/render.mjs";
 import { timeGod } from "./utils/turns.mjs";
-import { verificationCenter, verifyTie, playerOneArray, playerTwoArray } from "./utils/verification.mjs";
+import {
+  verificationCenter,
+  verifyTie,
+  playerOneArray,
+  playerTwoArray,
+} from "./utils/verification.mjs";
 
 /*
 ================================================================
@@ -42,11 +47,10 @@ bottomLeft.addEventListener("click", boxSelection);
 bottomMiddle.addEventListener("click", boxSelection);
 bottomRight.addEventListener("click", boxSelection);
 
-
 /**
  * Function that runs when the start button is pressed.
  * Reveals the game board and the player one label.
- * 
+ *
  */
 function startGame(event) {
   event.preventDefault();
@@ -64,27 +68,25 @@ function startGame(event) {
 
 /**
  * Function that runs anytime a box in the game board is clicked.
- * 
+ *
  */
 function boxSelection() {
   let thisBtn = $(this);
 
-  console.log('this button: ' + $(thisBtn).attr('id'));
+  console.log("this button: " + $(thisBtn).attr("id"));
 
   let winResult = verificationCenter(playerTurn, thisBtn);
 
   // removes event listener from button once clicked
-  let currentBtn = $(thisBtn).attr('id');
+  let currentBtn = $(thisBtn).attr("id");
   currentBtn = document.getElementById(currentBtn);
-  currentBtn.removeEventListener('click' , boxSelection);
+  currentBtn.removeEventListener("click", boxSelection);
 
-  // if(valid){
-    render.changeVisible();
-    render.changeColor(playerTurn, thisBtn);
-    playerTurn = timeGod.turnToggle(playerTurn);
-  // }
+  render.changeVisible();
+  render.changeColor(playerTurn, thisBtn);
+  playerTurn = timeGod.turnToggle(playerTurn);
 
-  if(winResult){
+  if (winResult) {
     topLeft.removeEventListener("click", boxSelection);
     topMiddle.removeEventListener("click", boxSelection);
     topRight.removeEventListener("click", boxSelection);
@@ -97,7 +99,7 @@ function boxSelection() {
   }
 
   let tie = verifyTie(playerOneArray, playerTwoArray);
-  if(tie){
-    console.log('end')
+  if (tie) {
+    console.log("end");
   }
 }
