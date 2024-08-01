@@ -95,12 +95,12 @@ function boxSelection() {
     bottomMiddle.removeEventListener("click", boxSelection);
     bottomRight.removeEventListener("click", boxSelection);
   } else {
-    render.changeVisible();
-    playerTurn = timeGod.turnToggle(playerTurn);
-  }
-
-  let tie = verifyTie(playerOneArray, playerTwoArray);
-  if (tie) {
-    console.log("end");
+    let tie = verifyTie(playerOneArray, playerTwoArray);
+    if (tie) {
+      console.log("end");
+    } else {
+      render.changeVisible();
+      playerTurn = timeGod.turnToggle(playerTurn);
+    }
   }
 }
