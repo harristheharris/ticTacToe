@@ -82,9 +82,7 @@ function boxSelection() {
   currentBtn = document.getElementById(currentBtn);
   currentBtn.removeEventListener("click", boxSelection);
 
-  render.changeVisible();
   render.changeColor(playerTurn, thisBtn);
-  playerTurn = timeGod.turnToggle(playerTurn);
 
   if (winResult) {
     topLeft.removeEventListener("click", boxSelection);
@@ -96,10 +94,13 @@ function boxSelection() {
     bottomLeft.removeEventListener("click", boxSelection);
     bottomMiddle.removeEventListener("click", boxSelection);
     bottomRight.removeEventListener("click", boxSelection);
-  }
-
-  let tie = verifyTie(playerOneArray, playerTwoArray);
-  if (tie) {
-    console.log("end");
+  } else {
+    let tie = verifyTie(playerOneArray, playerTwoArray);
+    if (tie) {
+      console.log("end");
+    } else {
+      render.changeVisible();
+      playerTurn = timeGod.turnToggle(playerTurn);
+    }
   }
 }
