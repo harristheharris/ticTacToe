@@ -82,9 +82,7 @@ function boxSelection() {
   currentBtn = document.getElementById(currentBtn);
   currentBtn.removeEventListener("click", boxSelection);
 
-  render.changeVisible();
   render.changeColor(playerTurn, thisBtn);
-  playerTurn = timeGod.turnToggle(playerTurn);
 
   if (winResult) {
     topLeft.removeEventListener("click", boxSelection);
@@ -97,6 +95,9 @@ function boxSelection() {
     bottomMiddle.removeEventListener("click", boxSelection);
     bottomRight.removeEventListener("click", boxSelection);
   }
+
+  render.changeVisible();
+  playerTurn = timeGod.turnToggle(playerTurn);
 
   let tie = verifyTie(playerOneArray, playerTwoArray);
   if (tie) {
