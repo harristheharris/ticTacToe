@@ -94,10 +94,10 @@ function boxSelection() {
     bottomLeft.removeEventListener("click", boxSelection);
     bottomMiddle.removeEventListener("click", boxSelection);
     bottomRight.removeEventListener("click", boxSelection);
+  } else {
+    render.changeVisible();
+    playerTurn = timeGod.turnToggle(playerTurn);
   }
-
-  render.changeVisible();
-  playerTurn = timeGod.turnToggle(playerTurn);
 
   let tie = verifyTie(playerOneArray, playerTwoArray);
   if (tie) {
